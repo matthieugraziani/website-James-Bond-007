@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Bond 007 — Archives MI6</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        bond: {
+                            black: '#050505',
+                            charcoal: '#0d0d0d',
+                            card: '#141414',
+                            border: '#262626',
+                            gold: '#c5a059',
+                            goldHover: '#dfbc77',
+                            muted: '#999999',
+                            silver: '#e0e0e0'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'Helvetica Neue', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col bg-bond-black text-bond-silver selection:bg-bond-gold selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-bond-black/95 backdrop-blur-md border-b border-bond-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-bond-gold/70 flex items-center justify-center text-bond-gold bg-bond-charcoal shadow-md group-hover:border-bond-gold transition-colors">
+                    <i class="fa-solid fa-crosshairs text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-xl font-black tracking-widest text-white">JAMES BOND <span class="gold-gradient-text">007</span></span>
+                    <span class="text-[9px] uppercase tracking-widest text-bond-muted font-semibold">Archives Classifiées MI6</span>
+                </div>
+            </a>
+
+            <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold tracking-widest uppercase">
+                <a href="#acteurs" class="hover:text-bond-gold transition-colors">Acteurs</a>
+                <a href="#filmographie" class="hover:text-bond-gold transition-colors">Films</a>
+                <a href="#actrices" class="hover:text-bond-gold transition-colors">Bond Girls</a>
+                <a href="#vehicules" class="hover:text-bond-gold transition-colors">Véhicules</a>
+                <a href="#gadgets" class="hover:text-bond-gold transition-colors">Gadgets</a>
+                <a href="#allies" class="hover:text-bond-gold transition-colors">Alliés</a>
+                <a href="#armes" class="hover:text-bond-gold transition-colors">Arsenal</a>
+                <a href="#quiz" class="hover:text-bond-gold transition-colors">Test MI6</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button id="ambianceBtn" class="px-3.5 py-2 rounded border border-bond-border bg-bond-charcoal text-bond-gold text-xs flex items-center gap-2 hover:border-bond-gold transition-all cursor-pointer shadow-sm">
+                    <i id="soundIcon" class="fa-solid fa-volume-xmark text-sm"></i>
+                    <span class="text-[10px] uppercase font-bold tracking-wider" id="soundText">Ambiance 007</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Lecteur Audio Officiel James Bond 007 -->
+    <audio id="officialBondAudio" loop preload="auto" src="assets/theme.mp3"></audio>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative py-20 bg-gradient-to-b from-bond-charcoal to-bond-black border-b border-bond-border text-center px-4">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl sm:text-6xl font-black text-white mb-6 font-cinzel tracking-tight">DOSSIERS ET ARCHIVES <span class="gold-gradient-text">007</span></h1>
+                <p class="text-bond-muted text-sm sm:text-base font-light max-w-2xl mx-auto">Explorez l'univers complet de James Bond : les 6 acteurs officiels, les actrices iconiques, la filmographie intégrale, l'arsenal de Q Branch, les super-vilains et les véhicules de légende.</p>
+            </div>
+        </section>
+
+        <!-- Dynamic Containers injected by JS Modules -->
+        <div id="actorsContainer"></div>
+        <div id="filmsContainer"></div>
+        <div id="actressContainer"></div>
+        <div id="vehiculesContainer"></div>
+        <div id="gadgetsContainer"></div>
+        <div id="alliesContainer"></div>
+        <div id="armesContainer"></div>
+        <div id="quizContainerRoot"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bond-black border-t border-bond-border py-10 text-center text-xs text-bond-muted">
+        <p class="font-cinzel text-bond-silver tracking-widest mb-1">ARCHIVES SECRÈTES DU SERVICE DE RENSEIGNEMENT BRITANNIQUE — MI6</p>
+        <p>Ce site est un projet personnel non officiel réalisé à des fins de portfolio/éducatives. Il n'est en aucun cas affilié, associé, autorisé, endossé par, ou officiellement lié à EON Productions, Metro-Goldwyn-Mayer (MGM), Danjaq ou à toute autre entreprise détentrice des droits de la franchise James Bond 007. Les noms, images et marques de la franchise appartiennent à leurs propriétaires respectifs.</p>
+    </footer>
+
+    <!-- Scripts Modules -->
+    <script src="audio.js"></script>
+    <script src="actors.js"></script>
+    <script src="actress.js"></script>
+    <script src="films.js"></script>
+    <script src="vehicule.js"></script>
+    <script src="gadgets.js"></script>
+    <script src="allies.js"></script>
+    <script src="arm.js"></script>
+    <script src="quiz.js"></script>
+    
+        <!-- Script Audio Controller pour le bouton Ambiance -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('ambianceBtn');
+            const audioEl = document.getElementById('officialBondAudio');
+
+            if (btn && audioEl) {
+                btn.addEventListener('click', () => {
+                    if (audioEl.paused) {
+                        audioEl.play().then(() => {
+                            isSoundPlaying = true;
+                            document.getElementById('soundIcon').className = "fa-solid fa-volume-high text-bond-gold animate-pulse";
+                            document.getElementById('soundText').textContent = "Thème 007 Actif";
+                        }).catch(err => {
+                            console.warn("Lecture audio impossible (vérifiez l'emplacement du fichier assets/theme.mp3) :", err);
+                            alert("Le navigateur bloque la lecture automatique ou le fichier 'assets/theme.mp3' est introuvable dans le dossier.");
+                        });
+                    } else {
+                        audioEl.pause();
+                        isSoundPlaying = false;
+                        document.getElementById('soundIcon').className = "fa-solid fa-volume-xmark text-sm";
+                        document.getElementById('soundText').textContent = "Ambiance 007";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

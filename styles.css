@@ -1,0 +1,40 @@
+/* ==========================================================================
+STYLES DU THÈME 007 - LUXE ET CINÉMATOGRAPHIQUE
+========================================================================== */
+body {
+background-color: #050505;
+color: #e0e0e0;
+font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, .font-cinzel {
+font-family: 'Cinzel', serif;
+}
+
+.gold-gradient-text {
+background: linear-gradient(135deg, #f7e2a9 0%, #c5a059 50%, #8a6a2a 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow:hover {
+box-shadow: 0 0 25px rgba(197, 160, 89, 0.3);
+border-color: #c5a059;
+}
+
+::-webkit-scrollbar {
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+background: #262626;
+border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #c5a059;
+}
